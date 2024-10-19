@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <a style= "float:left" class="webname">SUMAN <i>PRAMANIK</i></a>
+            <span class="pan">
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PROJECTS</a></li>
+            </span>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+       <div class="box box1">
+        <h3 id="quote" class="quote"></h3>
+        <div class="qrap">
+        <p id="author"></p> 
+        </div>
+       </div>
+       <div class="box box2" ></div>
+       <div class="box box3">
+        
+       </div>
+       <div class="box box4">
+        
+       </div>
+       <div class="box box5">
+        <a class="con" >Contact Me</a>
+        <div class="svg">
+        
+            <a class="con" href="mailto:mail.sumanpramanik@gmail.com"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
+    </div>
+
+       </div>
+       <div class="box box6">
+        <a class="lin" href="https://github.com/iamsumanreal">GITHUB</a>
+        <a class="lin" href="#">FACEBOOK</a>
+        <a class="lin" href="#">INSTAGRAM</a>
+       </div>
+    </div>
+    <script>
+    fetch('http://api.quotable.io/random', {
+        headers: {
+          'Access-Control-Allow-Origin': '*' // This is for development. 
+                                          // Don't use it in production without specifying allowed origins.
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('quote').innerText = `"${data.content}"`;
+          document.getElementById('author').innerHTML =`"${data.author}"`;
+      })
+      .catch(error => console.error('Error fetching quote:', error));
+    </script>
+    <!-- <script src="scripts.js"></script> -->
+</body>
+</html>
